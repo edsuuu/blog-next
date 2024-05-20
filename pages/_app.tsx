@@ -1,17 +1,18 @@
-'use client';
 import React from 'react';
-import { GlobalStyled } from '@/styles/GlobalStyled';
 import Navbar from '@/app/components/Navbar/Navbar';
 import { AppProps } from 'next/app';
+import { ThemeProvider } from 'styled-components';
+import { GlobalStyled } from '@/styles/Global-styled';
+import { theme } from '@/styles/theme';
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            <Navbar />
-            <Component {...pageProps} />
-            <GlobalStyled />
+            <ThemeProvider theme={theme}>
+                <GlobalStyled />
+                <Navbar />
+                <Component {...pageProps} />
+            </ThemeProvider>
         </>
     );
 }
-
-export default MyApp;
