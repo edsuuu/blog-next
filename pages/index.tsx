@@ -1,38 +1,25 @@
+import HomePage from '@/app/containers/HomePage';
+import { getAllPosts } from '@/app/data/posts/get-all-posts';
 import { PostData } from '@/app/domain/posts/tipagem';
 import { GetStaticProps } from 'next';
-
-const getPosts = async (): Promise<PostData[]> => {
-    const response = await fetch('http://localhost:1337/api/posts?populate=*');
-    const { data } = await response.json();
-
-    return data;
-};
 
 export type HomeProps = {
     posts: PostData[];
 };
 
 export default function Home({ posts }: HomeProps) {
-
-    return (
-        <div>
-            <h1>Home Page</h1>
-            {posts.map((post) => (
-                <div key={post.id}>
-                    <h2>{post.attributes.title}</h2>
-                </div>
-            ))}
-        </div>
-    );
+    return <HomePage posts={posts} />;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const post = await getPosts();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const { data }: any = await getAllPosts();
+    // console.log(data);
 
     return {
         props: {
-            posts: post,
-            revalidate: 5,
+            posts: data,
+            revalidate: 1,
         },
     };
 };

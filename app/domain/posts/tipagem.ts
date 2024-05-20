@@ -91,4 +91,4 @@ export type Meta = {
 export interface PostApiResponse {
     data: PostData;
     meta: Meta;
-};
+}

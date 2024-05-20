@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '@/app/components/Navbar/Navbar';
+import Header from '@/app/components/Header';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyled } from '@/styles/Global-styled';
@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <>
             <ThemeProvider theme={theme}>
                 <GlobalStyled />
-                <Navbar />
+                <Header />
                 <Component {...pageProps} />
             </ThemeProvider>
         </>
