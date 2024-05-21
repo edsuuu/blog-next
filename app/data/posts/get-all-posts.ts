@@ -1,5 +1,5 @@
 import { API_URL } from '@/app/config/app-config';
-import { PostData } from '@/app/domain/posts/tipagem';
+import { PostData } from '@/app/domain/posts/types';
 import { fetchJson } from '@/app/utils/fetch-json';
 
 export async function getAllPosts(query = ''): Promise<PostData[]> {

@@ -2,7 +2,7 @@ import Post from '@/app/containers/Post';
 import { countAllPosts } from '@/app/data/posts/count-all-posts';
 import { getAllPosts } from '@/app/data/posts/get-all-posts';
 import { getPost } from '@/app/data/posts/get-post';
-import { PostData } from '@/app/domain/posts/tipagem';
+import { PostData } from '@/app/domain/posts/types';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 export type DynamicPostProps = {

@@ -1,4 +1,4 @@
-import { PostData } from '@/app/domain/posts/tipagem';
+import { PostData } from '@/app/domain/posts/types';
 import { Container } from './styled';
 import { MainContainer } from '@/app/components/MainContainer';
 import PostCard from '@/app/components/PostCard';

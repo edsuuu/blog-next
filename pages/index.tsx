@@ -1,6 +1,6 @@
 import HomePage from '@/app/containers/HomePage';
 import { getAllPosts } from '@/app/data/posts/get-all-posts';
-import { PostData } from '@/app/domain/posts/tipagem';
+import { PostData } from '@/app/domain/posts/types';
 import { GetStaticProps } from 'next';
 
 export type HomeProps = {

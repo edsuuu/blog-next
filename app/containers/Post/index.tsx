@@ -1,4 +1,4 @@
-import { PostData } from "@/app/domain/posts/tipagem";
+import { PostData } from "@/app/domain/posts/types";
 import { Container, Content } from "./styled";
 
 export type PostProps = {
@@ -21,7 +21,7 @@ const Post =  ({ post }: PostProps) => {
                         case 'paragraph':
                             return <p key={index}>{item.children[0].text}</p>;
                         case 'quote':
-                            return <blockquote key={index}>{item.children[0].text}</blockquote>;
+                            return <blockquote key={index}>{item.children[0].text}</blockquote>; //ou usar <q></q>
                         case 'code':
                             return <pre key={index}><code>{item.children[0].text}</code></pre>;
                         // case 'image':
