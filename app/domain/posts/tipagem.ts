@@ -15,7 +15,9 @@ export type PostData = {
         createdAt: string;
         updatedAt: string;
         publishedAt: string;
-        image: ImageData;
+        image: {
+            data: ImageData;
+        };
         author: {
             data: AuthorData;
         };

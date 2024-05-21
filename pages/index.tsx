@@ -13,7 +13,10 @@ export default function Home({ posts }: HomeProps) {
 
 export const getStaticProps: GetStaticProps = async () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const { data }: any = await getAllPosts();
+    const { data }: any = await getAllPosts('populate[0]=image&sort=createdAt:desc');
+
+    // console.log(data);populate[0]=image&pagination[start]=0&pagination[limit]=1
+    // console.log(data[0].attributes.slug);
     // console.log(data);
 
     return {
