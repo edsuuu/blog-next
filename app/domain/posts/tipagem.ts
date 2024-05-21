@@ -1,6 +1,12 @@
 export type PostData = {
     id: number;
     attributes: {
+        categoria: {
+            data: Categoria;
+        };
+        autor: {
+            data: AuthorData
+        };
         title: string;
         content: {
             type: string;
@@ -21,6 +27,16 @@ export type PostData = {
         author: {
             data: AuthorData;
         };
+    };
+};
+
+export type Categoria = {
+    id: number;
+    attributes: {
+        name: string;
+        createdAt: string;
+        updatedAt: string;
+        publishedAt: string;
     };
 };
 

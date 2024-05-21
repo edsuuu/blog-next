@@ -1,20 +1,20 @@
+import Post from '@/app/containers/Post';
 import { countAllPosts } from '@/app/data/posts/count-all-posts';
 import { getAllPosts } from '@/app/data/posts/get-all-posts';
 import { getPost } from '@/app/data/posts/get-post';
 import { PostData } from '@/app/domain/posts/tipagem';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-export type DynamicPost = {
+export type DynamicPostProps = {
     post: PostData;
 };
 
-export default function DynamicPost({ post }: DynamicPost) {
-    return (
-        <div>
-            <h1>Dynamic Post {post.attributes.title}</h1>
-        </div>
-    );
-}
+const DynamicPost = ({ post }: DynamicPostProps) => {
+    console.log(post);
+    return <Post post={post} />;
+};
+
+export default DynamicPost;
 
 export const getStaticPaths: GetStaticPaths = async () => {
     const numberOfPosts = await countAllPosts();
