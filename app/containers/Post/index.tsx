@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 import { PostData } from '@/app/domain/posts/types';
-import { Container, Content } from './styled';
+import { Container, Content, PostTitle } from './styled';
+import PostDetails from '@/app/components/PostDetails';
 
 export type PostProps = {
     post: PostData;
@@ -12,8 +13,13 @@ const Post = ({ post }: PostProps) => {
 
     return (
         <Container>
-            <h1>{post.attributes.title}</h1>
-            <img src={post.attributes.image.data.attributes.formats.large.url} alt="" />
+
+            <PostTitle>
+                <h1>{post.attributes.title}</h1>
+                <img src={post.attributes.image.data.attributes.formats.large.url} alt="" />
+                <PostDetails data={post.attributes.createdAt} autor={post.attributes.autor.data.attributes.name} categoria={post.attributes.categoria.data.attributes.name} />
+            </PostTitle>
+
             <Content>
                 {post.attributes.content.map((item, index) => {
                     switch (item.type) {
@@ -96,10 +102,6 @@ const Post = ({ post }: PostProps) => {
                     }
                 })}
             </Content>
-            <div>
-                <p>Autor: {post.attributes.autor.data.attributes.name}</p>
-                <p>Categoria: {post.attributes.categoria.data.attributes.name}</p>
-            </div>
         </Container>
     );
 };
