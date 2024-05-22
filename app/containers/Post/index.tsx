@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @next/next/no-img-element */
 import { PostData } from '@/app/domain/posts/types';
-import { Container, Content, PostTitle } from './styled';
+import { Container, Content, PostHeader } from './styled';
 import PostDetails from '@/app/components/PostDetails';
+import PostTitle from '@/app/components/PostTitle';
 
 export type PostProps = {
     post: PostData;
@@ -13,12 +14,16 @@ const Post = ({ post }: PostProps) => {
 
     return (
         <Container>
-
-            <PostTitle>
-                <h1>{post.attributes.title}</h1>
-                <img src={post.attributes.image.data.attributes.formats.large.url} alt="ImagePost" />
+            <PostHeader>
+                <PostTitle
+                    titulo={post.attributes.title}
+                    imageUrl={post.attributes.image.data.attributes.formats.medium.url}
+                    alt={post.attributes.image.data.attributes.formats.medium.name}
+                    width={post.attributes.image.data.attributes.formats.medium.width}
+                    height={post.attributes.image.data.attributes.formats.medium.height}
+                />
                 <PostDetails data={post.attributes.createdAt} autor={post.attributes.autor.data.attributes.name} categoria={post.attributes.categoria.data.attributes.name} />
-            </PostTitle>
+            </PostHeader>
 
             <Content>
                 {post.attributes.content.map((item, index) => {
@@ -85,7 +90,7 @@ const Post = ({ post }: PostProps) => {
                             }
 
                         case 'quote':
-                            return <blockquote key={index}>{item.children[0].text}</blockquote>;
+                            return <q key={index}>{item.children[0].text}</q>;
 
                         case 'code':
                             return (
