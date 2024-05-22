@@ -1,16 +1,16 @@
 export type PostData = {
     id: number;
     attributes: {
-        categoria: {
-            data: Categoria;
+        categorias: {
+            data: Categoria[];
         };
         autor: {
-            data: AuthorData
+            data: AuthorData;
         };
         title: string;
         content: {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            map(arg0: (item: any, index: any) => import("react").JSX.Element | null): import("react").ReactNode;
+            map(arg0: (item: any, index: any) => import('react').JSX.Element | null): import('react').ReactNode;
             type: string;
             children: [
                 {
