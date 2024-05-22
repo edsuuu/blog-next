@@ -16,7 +16,7 @@ const Post = ({ post }: PostProps) => {
 
             <PostTitle>
                 <h1>{post.attributes.title}</h1>
-                <img src={post.attributes.image.data.attributes.formats.large.url} alt="" />
+                <img src={post.attributes.image.data.attributes.formats.large.url} alt="ImagePost" />
                 <PostDetails data={post.attributes.createdAt} autor={post.attributes.autor.data.attributes.name} categoria={post.attributes.categoria.data.attributes.name} />
             </PostTitle>
 

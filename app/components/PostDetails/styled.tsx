@@ -6,6 +6,8 @@ export const Container = styled.div`
     background-color: #8080806f;
     padding: 10px 15px;
     border-radius: 5px 25px;
+    min-width: 400px;
+
     span {
         font-weight: bold;
     }

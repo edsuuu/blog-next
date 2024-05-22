@@ -33,13 +33,15 @@ export const PostTitle = styled.div`
     justify-content: center;
     align-items: center;
     h1 {
-        margin: 25px 0px 20px 0px;
+        margin: 20px 0px 10px 0px;
         padding: 20px;
         text-align: start;
         align-self: start;
         font-size: 3rem;
     }
     img {
+        max-width: 100%;
+        min-width: 430px;
         border-radius: 10px;
     }
 `;
