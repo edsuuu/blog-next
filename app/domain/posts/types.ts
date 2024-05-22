@@ -9,6 +9,8 @@ export type PostData = {
         };
         title: string;
         content: {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            map(arg0: (item: any, index: any) => import("react").JSX.Element | null): import("react").ReactNode;
             type: string;
             children: [
                 {
