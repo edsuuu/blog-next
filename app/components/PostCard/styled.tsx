@@ -8,12 +8,15 @@ export const Container = styled.div`
     &:hover {
         opacity: 0.7;
         background-color: #0000002f;
+        border-radius: 10px;
+
     }
 `;
 
 export const PostCardCover = styled.div`
 
     img {
+        border-radius: 10px;
         width: 300px;
         height: 300px;
         display: block

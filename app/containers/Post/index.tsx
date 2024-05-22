@@ -22,7 +22,8 @@ const Post = ({ post }: PostProps) => {
                     width={post.attributes.image.data.attributes.formats.medium.width}
                     height={post.attributes.image.data.attributes.formats.medium.height}
                 />
-                <PostDetails data={post.attributes.createdAt} autor={post.attributes.autor.data.attributes.name} categoria={post.attributes.categoria.data.attributes.name} />
+
+                <PostDetails data={post.attributes.createdAt} autor={post.attributes.autor.data.attributes.name} categorias={post.attributes.categorias} key={post.attributes.categorias.data[0].id} />
             </PostHeader>
 
             <Content>
